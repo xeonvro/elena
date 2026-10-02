@@ -38,9 +38,9 @@
     <meta property="og:description" content="Explore Elena's expert insights on SEO strategies, digital marketing trends, and programming tips. Dive into comprehensive guides and thought-provoking articles today." />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://stafura.dev/images/home/og_home.jpg" />
+    <meta property="og:image" content="image_65c3bb.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://stafura.dev/images/home/og_home.jpg" />
+    <meta name="twitter:image" content="image_65c3bb.jpg" />
     <meta name="twitter:title" content="Elena: SEO, Marketing &amp; Programming" />
     <meta name="twitter:description" content="Explore Elena's expert insights on SEO strategies, digital marketing trends, and programming tips. Dive into comprehensive guides and thought-provoking articles today." />
     <link rel="alternate" type="application/rss+xml" href="https://stafura.dev/index.xml" title="Elena" />
@@ -48,17 +48,17 @@
       {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "\"Elena\"",
-  "url": "\"https://stafura.dev/\"",
-  "image": "\"https://stafura.dev//images/profile.jpg\"",
-  "jobTitle": "\"Developer \\u0026 E-commerce Entrepreneur\"",
+  "name": "Elena",
+  "url": "https://stafura.dev/",
+  "image": "image_65c3bb.jpg",
+  "jobTitle": "Developer \u0026 E-commerce Entrepreneur",
   "worksFor": {
     "@type": "Organization",
-    "name": "\"Megamix s.r.o.\""
+    "name": "Megamix s.r.o."
   },
-  "knowsLanguage": "[\"Slovak\",\"English\",\"German\",\"Swedish\"]",
-  "knowsAbout": "[\"PHP\",\"Go\",\"Python\",\"Laravel\",\"Magento 2\",\"E-commerce\",\"SEO\"]",
-  "sameAs": "[\"https://github.com/matusstafura\",\"https://www.linkedin.com/in/matus-stafura\",\"https://dev.to/matusstafura\"]"
+  "knowsLanguage": ["Slovak","English","German","Swedish"],
+  "knowsAbout": ["PHP","Go","Python","Laravel","Magento 2","E-commerce","SEO"],
+  "sameAs": ["https://github.com/matusstafura","https://www.linkedin.com/in/matus-stafura","https://dev.to/matusstafura"]
 }
     </script>
     <script defer="" src="https://umami.53186567.xyz/script.js" data-website-id="3841c281-0fa2-4c78-9105-6087965f208e">
@@ -68,32 +68,39 @@
   </head>
   <body>
     <noscript>
-      &lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8KF2Q3" height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8KF2Q3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <a class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] btn" href="#main">    Skip to content
-</a>
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] btn" href="#main">
+      Skip to content
+    </a>
     <div class="mx-3 my-3 flex min-h-[calc(100dvh-1.5rem)] max-w-3xl flex-col border border-edge bg-paper sm:mx-auto sm:my-8 sm:min-h-[calc(100dvh-4rem)]">
       <header class="relative z-30 border-b border-line">
         <div class="flex h-16 items-center justify-between gap-3 px-5 sm:px-8">
-          <a class="link-quiet -mx-1 px-1 text-lg font-semibold tracking-tight" href="/">          Elena
-          <span class="cursor" aria-hidden="true"></span>
-</a>
+          <a class="link-quiet -mx-1 px-1 text-lg font-semibold tracking-tight" href="/">
+            Elena
+            <span class="cursor" aria-hidden="true"></span>
+          </a>
           <div class="flex items-center gap-2">
             <nav aria-label="Navigation" class="mr-3 hidden items-center gap-5 font-mono text-[0.8125rem] font-medium md:flex">
-              <a aria-current="page" class="link-quiet inline-flex items-center gap-1" href="/">              Home
-</a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/posts">              Blog
-</a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/portfolio">              Portfolio
-</a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/about">              About me
-</a>
-              <a class="link-quiet inline-flex items-center gap-1" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">              GitHub
-              <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                <path d="M7 17 17 7M8 7h9v9">
-                </path>
-              </svg>
-</a>
+              <a aria-current="page" class="link-quiet inline-flex items-center gap-1" href="/">
+                Home
+              </a>
+              <a class="link-quiet inline-flex items-center gap-1" href="/posts">
+                Blog
+              </a>
+              <a class="link-quiet inline-flex items-center gap-1" href="/portfolio">
+                Portfolio
+              </a>
+              <a class="link-quiet inline-flex items-center gap-1" href="/about">
+                About me
+              </a>
+              <a class="link-quiet inline-flex items-center gap-1" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">
+                GitHub
+                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9">
+                  </path>
+                </svg>
+              </a>
             </nav>
             <details class="relative" data-dropdown="">
               <summary class="btn btn-outline" aria-label="Language">
@@ -104,54 +111,65 @@
                 </svg>
               </summary>
               <div class="absolute right-0 top-full z-40 mt-2 min-w-36 border border-edge bg-paper p-2 shadow-[4px_4px_0_var(--accent)]">
-                <a aria-current="page" class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/" hreflang="en">                English
-</a>
-                <a class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/de/" hreflang="de">                Deutsch
-</a>
+                <a aria-current="page" class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/" hreflang="en">
+                  English
+                </a>
+                <a class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/de/" hreflang="de">
+                  Deutsch
+                </a>
               </div>
             </details>
             <button type="button" class="btn btn-outline btn-icon" data-theme-toggle="" aria-label="Toggle dark mode">
-              <span class="dark:hidden">              <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z">
-                </path>
-              </svg>
-</span>
-              <span class="hidden dark:inline">              <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                <circle cx="12" cy="12" r="4">
-                </circle>
-                <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
-                </path>
-              </svg>
-</span>
+              <span class="dark:hidden">
+                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                  <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z">
+                  </path>
+                </svg>
+              </span>
+              <span class="hidden dark:inline">
+                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4">
+                  </circle>
+                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
+                  </path>
+                </svg>
+              </span>
             </button>
             <details class="group md:hidden" data-dropdown="">
               <summary class="btn btn-outline btn-icon" aria-label="Navigation">
-                <span class="group-open:hidden">                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M4 7h16M4 12h16M4 17h16">
-                  </path>
-                </svg>
-</span>
-                <span class="hidden group-open:inline">                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M6 6l12 12M18 6 6 18">
-                  </path>
-                </svg>
-</span>
+                <span class="group-open:hidden">
+                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16">
+                    </path>
+                  </svg>
+                </span>
+                <span class="hidden group-open:inline">
+                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6 6 18">
+                    </path>
+                  </svg>
+                </span>
               </summary>
               <nav aria-label="Navigation" class="absolute inset-x-0 top-full z-40 border-b border-edge bg-paper px-5 py-3 sm:px-8">
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/">                Home
-</a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/posts">                Blog
-</a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/portfolio">                Portfolio
-</a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/about">                About me
-</a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">                GitHub
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M7 17 17 7M8 7h9v9">
-                  </path>
-                </svg>
-</a>
+                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/">
+                  Home
+                </a>
+                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/posts">
+                  Blog
+                </a>
+                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/portfolio">
+                  Portfolio
+                </a>
+                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/about">
+                  About me
+                </a>
+                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">
+                  GitHub
+                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9">
+                    </path>
+                  </svg>
+                </a>
               </nav>
             </details>
           </div>
@@ -165,7 +183,7 @@
                 Developer &amp; e-commerce entrepreneur · Slovakia
               </p>
               <h1 class="text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl">
-                Hi, I'm Elena.
+                Hi, I&#39;m Elena.
               </h1>
               <div class="prose prose-lg mt-6 text-pretty">
                 <p>
@@ -173,71 +191,82 @@
                 </p>
               </div>
               <div class="mt-8 flex flex-wrap gap-3">
-                <a class="btn" href="/posts/">                Read the blog
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M4 12h16M14 6l6 6-6 6">
-                  </path>
-                </svg>
-</a>
-                <a class="btn btn-outline" href="/portfolio/">                See my work
-</a>
+                <a class="btn" href="/posts/">
+                  Read the blog
+                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                    <path d="M4 12h16M14 6l6 6-6 6">
+                    </path>
+                  </svg>
+                </a>
+                <a class="btn btn-outline" href="/portfolio/">
+                  See my work
+                </a>
               </div>
               <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[0.8125rem] font-medium">
                 <li>
-                  <a class="link" href="https://github.com/matusstafura" rel="me noopener noreferrer" target="_blank">                  GitHub
-</a>
+                  <a class="link" href="https://github.com/matusstafura" rel="me noopener noreferrer" target="_blank">
+                    GitHub
+                  </a>
                 </li>
                 <li>
-                  <a class="link" href="https://www.linkedin.com/in/matus-stafura/" rel="me noopener noreferrer" target="_blank">                  LinkedIn
-</a>
+                  <a class="link" href="https://www.linkedin.com/in/matus-stafura/" rel="me noopener noreferrer" target="_blank">
+                    LinkedIn
+                  </a>
                 </li>
                 <li>
-                  <a class="link" href="https://dev.to/matusstafura" rel="me noopener noreferrer" target="_blank">                  dev.to
-</a>
+                  <a class="link" href="https://dev.to/matusstafura" rel="me noopener noreferrer" target="_blank">
+                    dev.to
+                  </a>
                 </li>
                 <li>
-                  <a class="link" href="https://bsky.app/profile/stafura.bsky.social" rel="me noopener noreferrer" target="_blank">                  Bluesky
-</a>
+                  <a class="link" href="https://bsky.app/profile/stafura.bsky.social" rel="me noopener noreferrer" target="_blank">
+                    Bluesky
+                  </a>
                 </li>
               </ul>
             </div>
             <picture class="shrink-0">
-              <source type="image/webp" srcset="/images/profile.webp" />
-              <img src="/images/profile.jpg" alt="Elena" width="144" height="144" decoding="async" fetchpriority="high" class="size-28 border border-edge object-cover shadow-[6px_6px_0_var(--accent)] sm:size-36" />
+              <img src="image_65c3bb.jpg" alt="Elena" width="144" height="144" decoding="async" fetchpriority="high" class="size-28 border border-edge object-cover shadow-[6px_6px_0_var(--accent)] sm:size-36" />
             </picture>
           </div>
         </section>
         <section class="border-b border-line" aria-labelledby="latest">
           <div class="flex items-baseline justify-between px-5 pb-3 pt-8 sm:px-8">
             <h2 id="latest" class="label text-ink">
-              <span class="text-accent">              01
-</span>
+              <span class="text-accent">
+                01
+              </span>
               / Latest posts
             </h2>
-            <a class="link font-mono text-[0.8125rem] font-medium" href="/posts/">            All posts
-</a>
+            <a class="link font-mono text-[0.8125rem] font-medium" href="/posts/">
+              All posts
+            </a>
           </div>
           <ul class="divide-y divide-line pb-4">
             <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2026-07-18">              2026-07-18
-</time>
+              <time class="label pt-[0.35rem]" datetime="2026-07-18">
+                2026-07-18
+              </time>
               <div class="min-w-0">
                 <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://stafura.dev/krashen-i-plus-1-difficulty-scale-comprehensible-input/">                  Solving Krashen's i+1: A 0–100 Difficulty Scale for Language Reading Practice
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/krashen-i-plus-1-difficulty-scale-comprehensible-input/">
+                    Solving Krashen&#39;s i+1: A 0–100 Difficulty Scale for Language Reading Practice
+                  </a>
                 </h3>
                 <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Krashen's i+1 input hypothesis is powerful but hard to apply — CEFR levels jump too much. Here's a 0–100 scale and AI prompt to find your sweet spot.
+                  Krashen&#39;s i+1 input hypothesis is powerful but hard to apply — CEFR levels jump too much. Here&#39;s a 0–100 scale and AI prompt to find your sweet spot.
                 </p>
               </div>
             </li>
             <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2026-07-16">              2026-07-16
-</time>
+              <time class="label pt-[0.35rem]" datetime="2026-07-16">
+                2026-07-16
+              </time>
               <div class="min-w-0">
                 <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://stafura.dev/auto-restart-mariadb-ubuntu-systemd/">                  Automatically Restart MariaDB on Crash in Ubuntu with systemd
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/auto-restart-mariadb-ubuntu-systemd/">
+                    Automatically Restart MariaDB on Crash in Ubuntu with systemd
+                  </a>
                 </h3>
                 <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
                   Learn how to auto-restart MariaDB after a crash in Ubuntu using a systemd override.
@@ -245,12 +274,14 @@
               </div>
             </li>
             <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-12-13">              2025-12-13
-</time>
+              <time class="label pt-[0.35rem]" datetime="2025-12-13">
+                2025-12-13
+              </time>
               <div class="min-w-0">
                 <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://stafura.dev/why-half-finished-is-worse-than-never-started/">                  On decision making: Why Half-Finished Is Worse Than Never Started
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/why-half-finished-is-worse-than-never-started/">
+                    On decision making: Why Half-Finished Is Worse Than Never Started
+                  </a>
                 </h3>
                 <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
                   Exploring the pitfalls of starting tasks without finishing them and advocating for an all-or-nothing approach to commitments.
@@ -258,12 +289,14 @@
               </div>
             </li>
             <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-12-06">              2025-12-06
-</time>
+              <time class="label pt-[0.35rem]" datetime="2025-12-06">
+                2025-12-06
+              </time>
               <div class="min-w-0">
                 <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://stafura.dev/why-motivation-is-irrelevant-to-getting-things-done/">                  Why Motivation Is Irrelevant to Getting Things Done
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/why-motivation-is-irrelevant-to-getting-things-done/">
+                    Why Motivation Is Irrelevant to Getting Things Done
+                  </a>
                 </h3>
                 <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
                   Motivation is overrated. Learn why your feelings are irrelevant to getting tasks done and how to break free from dependency on external motivation.
@@ -271,12 +304,14 @@
               </div>
             </li>
             <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-11-29">              2025-11-29
-</time>
+              <time class="label pt-[0.35rem]" datetime="2025-11-29">
+                2025-11-29
+              </time>
               <div class="min-w-0">
                 <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://stafura.dev/4-daily-practices-that-build-lifelong-intelligence/">                  4 Daily Practices That Build Lifelong Intelligence
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/4-daily-practices-that-build-lifelong-intelligence/">
+                    4 Daily Practices That Build Lifelong Intelligence
+                  </a>
                 </h3>
                 <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
                   Discover four simple daily practices that can help you develop lifelong intelligence. From thinking ahead to self-awareness, these habits will enhance your cognitive abilities.
@@ -288,12 +323,14 @@
         <section class="px-5 pb-12 pt-8 sm:px-8" aria-labelledby="projects">
           <div class="flex items-baseline justify-between pb-5">
             <h2 id="projects" class="label text-ink">
-              <span class="text-accent">              02
-</span>
+              <span class="text-accent">
+                02
+              </span>
               / Projects
             </h2>
-            <a class="link font-mono text-[0.8125rem] font-medium" href="/portfolio/">            All projects
-</a>
+            <a class="link font-mono text-[0.8125rem] font-medium" href="/portfolio/">
+              All projects
+            </a>
           </div>
           <ul class="grid gap-4 sm:grid-cols-3">
             <li class="card">
@@ -303,8 +340,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://zentools.dev/" rel="noopener noreferrer" target="_blank">                  ZenTools.dev - Webtools for everyday use
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://zentools.dev/" rel="noopener noreferrer" target="_blank">
+                    ZenTools.dev - Webtools for everyday use
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   A collection of webtools for everyday use.
@@ -325,8 +363,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://tailcake.dev/" rel="noopener noreferrer" target="_blank">                  Components with TailwindCSS
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://tailcake.dev/" rel="noopener noreferrer" target="_blank">
+                    Components with TailwindCSS
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   A collection of components built with TailwindCSS.
@@ -347,8 +386,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://berg.stafura.dev/" rel="noopener noreferrer" target="_blank">                  Berg Hugo Theme
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://berg.stafura.dev/" rel="noopener noreferrer" target="_blank">
+                    Berg Hugo Theme
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   A clean and modern responsive blog theme for Hugo.
@@ -368,8 +408,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://zenpolyglot.com/" rel="noopener noreferrer" target="_blank">                  Zen Polyglot - Grammar practice for language learners
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://zenpolyglot.com/" rel="noopener noreferrer" target="_blank">
+                    Zen Polyglot - Grammar practice for language learners
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   Free interactive grammar drills with spaced-repetition review for German, Swedish and Japanese.
@@ -390,8 +431,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://brunel.sk/" rel="noopener noreferrer" target="_blank">                  Brunel - Machine plaster and screed
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://brunel.sk/" rel="noopener noreferrer" target="_blank">
+                    Brunel - Machine plaster and screed
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   Website for a Slovak construction company specialising in machine plastering and screeds.
@@ -412,8 +454,9 @@
               </picture>
               <div class="flex flex-1 flex-col gap-2 p-4">
                 <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-['']" href="https://dubacik.pl/" rel="noopener noreferrer" target="_blank">                  Dubacik - Aparthouse in Tylicz
-</a>
+                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://dubacik.pl/" rel="noopener noreferrer" target="_blank">
+                    Dubacik - Aparthouse in Tylicz
+                  </a>
                 </h3>
                 <p class="text-sm text-muted">
                   Website for a cozy two-apartment aparthouse in the Polish mountain village of Tylicz.
@@ -436,17 +479,21 @@
             © 2026 Elena
           </p>
           <nav aria-label="Legal" class="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a class="link-quiet" href="https://stafura.dev/cookies">            Cookies
-</a>
-            <a class="link-quiet" href="https://stafura.dev/privacy-policy">            Privacy Policy
-</a>
-            <a class="link-quiet inline-flex items-center gap-1" href="#main">            Top
-            <span class="-rotate-90">            <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-              <path d="M4 12h16M14 6l6 6-6 6">
-              </path>
-            </svg>
-</span>
-</a>
+            <a class="link-quiet" href="https://stafura.dev/cookies">
+              Cookies
+            </a>
+            <a class="link-quiet" href="https://stafura.dev/privacy-policy">
+              Privacy Policy
+            </a>
+            <a class="link-quiet inline-flex items-center gap-1" href="#main">
+              Top
+              <span class="-rotate-90">
+                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
+                  <path d="M4 12h16M14 6l6 6-6 6">
+                  </path>
+                </svg>
+              </span>
+            </a>
           </nav>
         </div>
       </footer>
