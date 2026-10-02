@@ -1,504 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="generator" content="Hugo 0.166.0" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script defer="">
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N8KF2Q3');
-    </script>
-    <script>
-      try {
-      var t = localStorage.getItem("theme");
-      if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.classList.add("dark");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App</title>
+  <style>
+    /* 1. Theme Color Variables */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #0f172a;
+      --card-bg: #f8fafc;
+      --border-color: #e2e8f0;
+      --btn-bg: #0f172a;
+      --btn-text: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #0f172a;
+      --text-color: #f8fafc;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --btn-bg: #f8fafc;
+      --btn-text: #0f172a;
+    }
+
+    /* 2. Global Base Styles */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* 3. Toggle Button Styles */
+    .theme-btn {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.1s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .theme-btn:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>Theme Switcher</h1>
+    <p>Click the button below to toggle between Day and Night mode.</p>
+    
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+      <span id="theme-icon">🌙</span>
+      <span id="theme-text">Dark Mode</span>
+    </button>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+
+    // Load saved theme from localStorage or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      
+      if (theme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light Mode';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark Mode';
       }
-    } catch (e) {}
-    </script>
-    <title>
-      Elena: SEO, Marketing &amp; Programming
-    </title>
-    <meta name="description" content="Explore Elena's expert insights on SEO strategies, digital marketing trends, and programming tips. Dive into comprehensive guides and thought-provoking articles today." />
-    <link rel="canonical" href="https://stafura.dev/" />
-    <link rel="alternate" hreflang="en" href="https://stafura.dev/" />
-    <link rel="alternate" hreflang="x-default" href="https://stafura.dev/" />
-    <link rel="alternate" hreflang="de" href="https://stafura.dev/de/" />
-    <link rel="icon" href="https://stafura.dev/images/favicon/favicon.ico" type="image/x-icon" />
-    <meta name="color-scheme" content="light dark" />
-    <link rel="preload" href="/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="" />
-    <link rel="preload" href="/fonts/geist-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="" />
-    <link rel="stylesheet" href="/css/site.min.544c7343e41cd6bc519f3e0017a63b0ea8c3b73553ef0b4deb3e83abcbecf09a.css" integrity="sha256-VExzQ+Qc1rxRnz4AF6Y7DqjDtzVT7wtN6z6Dq8vs8Jo=" />
-    <meta property="og:url" content="https://stafura.dev/" />
-    <meta property="og:site_name" content="Elena" />
-    <meta property="og:title" content="Elena: SEO, Marketing &amp; Programming" />
-    <meta property="og:description" content="Explore Elena's expert insights on SEO strategies, digital marketing trends, and programming tips. Dive into comprehensive guides and thought-provoking articles today." />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="image_65c3bb.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="image_65c3bb.jpg" />
-    <meta name="twitter:title" content="Elena: SEO, Marketing &amp; Programming" />
-    <meta name="twitter:description" content="Explore Elena's expert insights on SEO strategies, digital marketing trends, and programming tips. Dive into comprehensive guides and thought-provoking articles today." />
-    <link rel="alternate" type="application/rss+xml" href="https://stafura.dev/index.xml" title="Elena" />
-    <script type="application/ld+json">
-      {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Elena",
-  "url": "https://stafura.dev/",
-  "image": "image_65c3bb.jpg",
-  "jobTitle": "Developer \u0026 E-commerce Entrepreneur",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Megamix s.r.o."
-  },
-  "knowsLanguage": ["Slovak","English","German","Swedish"],
-  "knowsAbout": ["PHP","Go","Python","Laravel","Magento 2","E-commerce","SEO"],
-  "sameAs": ["https://github.com/matusstafura","https://www.linkedin.com/in/matus-stafura","https://dev.to/matusstafura"]
-}
-    </script>
-    <script defer="" src="https://umami.53186567.xyz/script.js" data-website-id="3841c281-0fa2-4c78-9105-6087965f208e">
-    </script>
-    <script defer="" src="https://umami.53186567.xyz/recorder.js" data-website-id="3841c281-0fa2-4c78-9105-6087965f208e">
-    </script>
-  </head>
-  <body>
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8KF2Q3" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <a class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[70] btn" href="#main">
-      Skip to content
-    </a>
-    <div class="mx-3 my-3 flex min-h-[calc(100dvh-1.5rem)] max-w-3xl flex-col border border-edge bg-paper sm:mx-auto sm:my-8 sm:min-h-[calc(100dvh-4rem)]">
-      <header class="relative z-30 border-b border-line">
-        <div class="flex h-16 items-center justify-between gap-3 px-5 sm:px-8">
-          <a class="link-quiet -mx-1 px-1 text-lg font-semibold tracking-tight" href="/">
-            Elena
-            <span class="cursor" aria-hidden="true"></span>
-          </a>
-          <div class="flex items-center gap-2">
-            <nav aria-label="Navigation" class="mr-3 hidden items-center gap-5 font-mono text-[0.8125rem] font-medium md:flex">
-              <a aria-current="page" class="link-quiet inline-flex items-center gap-1" href="/">
-                Home
-              </a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/posts">
-                Blog
-              </a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/portfolio">
-                Portfolio
-              </a>
-              <a class="link-quiet inline-flex items-center gap-1" href="/about">
-                About me
-              </a>
-              <a class="link-quiet inline-flex items-center gap-1" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">
-                GitHub
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M7 17 17 7M8 7h9v9">
-                  </path>
-                </svg>
-              </a>
-            </nav>
-            <details class="relative" data-dropdown="">
-              <summary class="btn btn-outline" aria-label="Language">
-                EN
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="m6 9 6 6 6-6">
-                  </path>
-                </svg>
-              </summary>
-              <div class="absolute right-0 top-full z-40 mt-2 min-w-36 border border-edge bg-paper p-2 shadow-[4px_4px_0_var(--accent)]">
-                <a aria-current="page" class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/" hreflang="en">
-                  English
-                </a>
-                <a class="link-quiet block px-2 py-1.5 text-sm" href="https://stafura.dev/de/" hreflang="de">
-                  Deutsch
-                </a>
-              </div>
-            </details>
-            <button type="button" class="btn btn-outline btn-icon" data-theme-toggle="" aria-label="Toggle dark mode">
-              <span class="dark:hidden">
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z">
-                  </path>
-                </svg>
-              </span>
-              <span class="hidden dark:inline">
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4">
-                  </circle>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
-                  </path>
-                </svg>
-              </span>
-            </button>
-            <details class="group md:hidden" data-dropdown="">
-              <summary class="btn btn-outline btn-icon" aria-label="Navigation">
-                <span class="group-open:hidden">
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M4 7h16M4 12h16M4 17h16">
-                    </path>
-                  </svg>
-                </span>
-                <span class="hidden group-open:inline">
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M6 6l12 12M18 6 6 18">
-                    </path>
-                  </svg>
-                </span>
-              </summary>
-              <nav aria-label="Navigation" class="absolute inset-x-0 top-full z-40 border-b border-edge bg-paper px-5 py-3 sm:px-8">
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/">
-                  Home
-                </a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/posts">
-                  Blog
-                </a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/portfolio">
-                  Portfolio
-                </a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="/about">
-                  About me
-                </a>
-                <a class="link-quiet flex w-fit items-center gap-1 py-2 font-mono text-sm font-medium" href="https://github.com/matusstafura" rel="noopener noreferrer" target="_blank">
-                  GitHub
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </a>
-              </nav>
-            </details>
-          </div>
-        </div>
-      </header>
-      <main id="main" class="flex-1">
-        <section class="border-b border-line px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-16">
-          <div class="flex flex-col-reverse gap-8 sm:flex-row sm:items-start sm:justify-between">
-            <div class="max-w-[34rem]">
-              <p class="label mb-5">
-                Developer &amp; e-commerce entrepreneur · Slovakia
-              </p>
-              <h1 class="text-balance text-5xl font-semibold leading-[1.02] tracking-tight sm:text-6xl">
-                Hi, I&#39;m Elena.
-              </h1>
-              <div class="prose prose-lg mt-6 text-pretty">
-                <p>
-                  I build e-commerce software and grow online shops. Here I write about SEO, marketing and programming, and share the tools, modules and themes I make along the way.
-                </p>
-              </div>
-              <div class="mt-8 flex flex-wrap gap-3">
-                <a class="btn" href="/posts/">
-                  Read the blog
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M4 12h16M14 6l6 6-6 6">
-                    </path>
-                  </svg>
-                </a>
-                <a class="btn btn-outline" href="/portfolio/">
-                  See my work
-                </a>
-              </div>
-              <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[0.8125rem] font-medium">
-                <li>
-                  <a class="link" href="https://github.com/matusstafura" rel="me noopener noreferrer" target="_blank">
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a class="link" href="https://www.linkedin.com/in/matus-stafura/" rel="me noopener noreferrer" target="_blank">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a class="link" href="https://dev.to/matusstafura" rel="me noopener noreferrer" target="_blank">
-                    dev.to
-                  </a>
-                </li>
-                <li>
-                  <a class="link" href="https://bsky.app/profile/stafura.bsky.social" rel="me noopener noreferrer" target="_blank">
-                    Bluesky
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <picture class="shrink-0">
-              <img src="image_65c3bb.jpg" alt="Elena" width="144" height="144" decoding="async" fetchpriority="high" class="size-28 border border-edge object-cover shadow-[6px_6px_0_var(--accent)] sm:size-36" />
-            </picture>
-          </div>
-        </section>
-        <section class="border-b border-line" aria-labelledby="latest">
-          <div class="flex items-baseline justify-between px-5 pb-3 pt-8 sm:px-8">
-            <h2 id="latest" class="label text-ink">
-              <span class="text-accent">
-                01
-              </span>
-              / Latest posts
-            </h2>
-            <a class="link font-mono text-[0.8125rem] font-medium" href="/posts/">
-              All posts
-            </a>
-          </div>
-          <ul class="divide-y divide-line pb-4">
-            <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2026-07-18">
-                2026-07-18
-              </time>
-              <div class="min-w-0">
-                <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/krashen-i-plus-1-difficulty-scale-comprehensible-input/">
-                    Solving Krashen&#39;s i+1: A 0–100 Difficulty Scale for Language Reading Practice
-                  </a>
-                </h3>
-                <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Krashen&#39;s i+1 input hypothesis is powerful but hard to apply — CEFR levels jump too much. Here&#39;s a 0–100 scale and AI prompt to find your sweet spot.
-                </p>
-              </div>
-            </li>
-            <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2026-07-16">
-                2026-07-16
-              </time>
-              <div class="min-w-0">
-                <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/auto-restart-mariadb-ubuntu-systemd/">
-                    Automatically Restart MariaDB on Crash in Ubuntu with systemd
-                  </a>
-                </h3>
-                <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Learn how to auto-restart MariaDB after a crash in Ubuntu using a systemd override.
-                </p>
-              </div>
-            </li>
-            <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-12-13">
-                2025-12-13
-              </time>
-              <div class="min-w-0">
-                <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/why-half-finished-is-worse-than-never-started/">
-                    On decision making: Why Half-Finished Is Worse Than Never Started
-                  </a>
-                </h3>
-                <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Exploring the pitfalls of starting tasks without finishing them and advocating for an all-or-nothing approach to commitments.
-                </p>
-              </div>
-            </li>
-            <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-12-06">
-                2025-12-06
-              </time>
-              <div class="min-w-0">
-                <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/why-motivation-is-irrelevant-to-getting-things-done/">
-                    Why Motivation Is Irrelevant to Getting Things Done
-                  </a>
-                </h3>
-                <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Motivation is overrated. Learn why your feelings are irrelevant to getting tasks done and how to break free from dependency on external motivation.
-                </p>
-              </div>
-            </li>
-            <li class="group relative grid gap-x-6 gap-y-1 px-5 py-4 transition-colors hover:bg-tint sm:grid-cols-[6.5rem_1fr] sm:px-8">
-              <time class="label pt-[0.35rem]" datetime="2025-11-29">
-                2025-11-29
-              </time>
-              <div class="min-w-0">
-                <h3 class="text-lg font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://stafura.dev/4-daily-practices-that-build-lifelong-intelligence/">
-                    4 Daily Practices That Build Lifelong Intelligence
-                  </a>
-                </h3>
-                <p class="mt-1 line-clamp-2 text-[0.9375rem] text-muted">
-                  Discover four simple daily practices that can help you develop lifelong intelligence. From thinking ahead to self-awareness, these habits will enhance your cognitive abilities.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section class="px-5 pb-12 pt-8 sm:px-8" aria-labelledby="projects">
-          <div class="flex items-baseline justify-between pb-5">
-            <h2 id="projects" class="label text-ink">
-              <span class="text-accent">
-                02
-              </span>
-              / Projects
-            </h2>
-            <a class="link font-mono text-[0.8125rem] font-medium" href="/portfolio/">
-              All projects
-            </a>
-          </div>
-          <ul class="grid gap-4 sm:grid-cols-3">
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <source type="image/webp" srcset="/images/home/tools.webp" />
-                <img src="/images/home/tools.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://zentools.dev/" rel="noopener noreferrer" target="_blank">
-                    ZenTools.dev - Webtools for everyday use
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  A collection of webtools for everyday use.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit zentools.dev
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <source type="image/webp" srcset="/images/home/tailcake.webp" />
-                <img src="/images/home/tailcake.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://tailcake.dev/" rel="noopener noreferrer" target="_blank">
-                    Components with TailwindCSS
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  A collection of components built with TailwindCSS.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit tailcake.dev
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <source type="image/webp" srcset="/images/home/berg.webp" />
-                <img src="/images/home/berg.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://berg.stafura.dev/" rel="noopener noreferrer" target="_blank">
-                    Berg Hugo Theme
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  A clean and modern responsive blog theme for Hugo.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit berg.stafura.dev
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <img src="/images/home/polyglot.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://zenpolyglot.com/" rel="noopener noreferrer" target="_blank">
-                    Zen Polyglot - Grammar practice for language learners
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  Free interactive grammar drills with spaced-repetition review for German, Swedish and Japanese.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit zenpolyglot.com
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <source type="image/webp" srcset="/images/home/brunel.webp" />
-                <img src="/images/home/brunel.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://brunel.sk/" rel="noopener noreferrer" target="_blank">
-                    Brunel - Machine plaster and screed
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  Website for a Slovak construction company specialising in machine plastering and screeds.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit brunel.sk
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-            <li class="card">
-              <picture class="block border-b border-edge">
-                <source type="image/webp" srcset="/images/home/dubacik.webp" />
-                <img src="/images/home/dubacik.jpg" alt="" loading="lazy" decoding="async" width="480" height="270" class="aspect-video w-full object-cover" />
-              </picture>
-              <div class="flex flex-1 flex-col gap-2 p-4">
-                <h3 class="text-base font-semibold leading-snug tracking-tight">
-                  <a class="link-quiet after:absolute after:inset-0 after:content-[&#39;&#39;]" href="https://dubacik.pl/" rel="noopener noreferrer" target="_blank">
-                    Dubacik - Aparthouse in Tylicz
-                  </a>
-                </h3>
-                <p class="text-sm text-muted">
-                  Website for a cozy two-apartment aparthouse in the Polish mountain village of Tylicz.
-                </p>
-                <p class="label mt-auto inline-flex items-center gap-1 pt-2 text-ink">
-                  Visit dubacik.pl
-                  <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9">
-                    </path>
-                  </svg>
-                </p>
-              </div>
-            </li>
-          </ul>
-        </section>
-      </main>
-      <footer class="border-t border-line px-5 py-6 sm:px-8">
-        <div class="flex flex-col gap-3 font-mono text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © 2026 Elena
-          </p>
-          <nav aria-label="Legal" class="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a class="link-quiet" href="https://stafura.dev/cookies">
-              Cookies
-            </a>
-            <a class="link-quiet" href="https://stafura.dev/privacy-policy">
-              Privacy Policy
-            </a>
-            <a class="link-quiet inline-flex items-center gap-1" href="#main">
-              Top
-              <span class="-rotate-90">
-                <svg class="size-4 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true">
-                  <path d="M4 12h16M14 6l6 6-6 6">
-                  </path>
-                </svg>
-              </span>
-            </a>
-          </nav>
-        </div>
-      </footer>
-    </div>
-    <script src="/js/site.min.9befa439ac21e8543b7f2030d4ffd2c983beae596d1c0adf3436299f48f44552.js" integrity="sha256-m++kOawh6FQ7fyAw1P/SyYO+rlltHArfNDYpn0j0RVI=" defer="">
-    </script>
-  </body>
+    }
+
+    // Apply active theme on page load
+    applyTheme(initialTheme);
+
+    // Toggle event listener
+    toggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  </script>
+</body>
 </html>
