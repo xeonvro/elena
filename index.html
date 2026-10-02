@@ -3,116 +3,405 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>App</title>
+  <title>Matus Stafura - Portfolio</title>
   <style>
-    /* 1. Theme Color Variables */
+    /* CSS Variables for Dark Theme */
     :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --card-bg: #f8fafc;
-      --border-color: #e2e8f0;
-      --btn-bg: #0f172a;
-      --btn-text: #ffffff;
+      --bg-color: #0b0d10;
+      --card-bg: #12151a;
+      --border-color: #232730;
+      --text-main: #f0f2f5;
+      --text-muted: #8b949e;
+      --accent-color: #3b82f6;
+      --btn-bg: #1a1e24;
+      --btn-hover: #262c36;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     }
 
-    [data-theme="dark"] {
-      --bg-color: #0f172a;
-      --text-color: #f8fafc;
-      --card-bg: #1e293b;
-      --border-color: #334155;
-      --btn-bg: #f8fafc;
-      --btn-text: #0f172a;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    /* 2. Global Base Styles */
     body {
       background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
-      margin: 0;
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      padding: 0 16px 60px;
     }
 
     .container {
+      width: 100%;
+      max-width: 800px;
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      min-height: 100vh;
+      background-color: var(--bg-color);
+    }
+
+    /* Header & Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .brand-accent {
+      width: 8px;
+      height: 16px;
+      background-color: var(--accent-color);
+      display: inline-block;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text-main);
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 8px;
+    }
+
+    .tool-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 40px 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 500px;
+      margin-bottom: 24px;
+    }
+
+    .profile-frame {
+      position: relative;
+      width: 120px;
+      height: 140px;
+      flex-shrink: 0;
+      border: 2px solid var(--accent-color);
+      padding: 4px;
+      background: var(--card-bg);
+    }
+
+    .profile-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Buttons & Links */
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-secondary {
+      background-color: var(--btn-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--btn-hover);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+    }
+
+    .social-links a {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border-color);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .section-title {
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section-link {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    /* Post Lists */
+    .post-item {
+      padding: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .post-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      text-decoration: none;
+      display: block;
+    }
+
+    .post-title:hover {
+      color: var(--accent-color);
+    }
+
+    .post-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 600px;
       background-color: var(--card-bg);
       border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    /* 3. Toggle Button Styles */
-    .theme-btn {
-      background-color: var(--btn-bg);
-      color: var(--btn-text);
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      cursor: pointer;
-      display: inline-flex;
+      padding: 12px 20px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
-      transition: transform 0.1s ease, background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .theme-btn:active {
-      transform: scale(0.97);
+    .cookie-banner a {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .cookie-btn {
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+    }
+
+    .cookie-reject {
+      background: transparent;
+      color: var(--text-main);
+    }
+
+    .cookie-accept {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+      border: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .hero-content {
+        flex-direction: column-reverse;
+      }
+      .profile-frame {
+        width: 100px;
+        height: 120px;
+      }
+      header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
 
-  <main class="container">
-    <h1>Theme Switcher</h1>
-    <p>Click the button below to toggle between Day and Night mode.</p>
-    
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-      <span id="theme-icon">🌙</span>
-      <span id="theme-text">Dark Mode</span>
-    </button>
-  </main>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <a href="#" class="brand">
+        Matus Stafura <span class="brand-accent"></span>
+      </a>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">Portfolio</a>
+        <a href="#">About me</a>
+        <a href="#">GitHub ↗</a>
+        <div class="nav-tools">
+          <button class="tool-btn">EN ∨</button>
+          <button class="tool-btn">⚙</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="subtitle">DEVELOPER & E-COMMERCE ENTREPRENEUR . SLOVAKIA</div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hi, I'm Matus.</h1>
+          <p>
+            I build e-commerce software and grow online shops. Here I write about SEO, marketing and programming, and share the tools, modules and themes I make along the way.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Read the blog →</a>
+            <a href="#" class="btn btn-secondary">See my work</a>
+          </div>
+          <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">dev.to</a>
+            <a href="#">Bluesky</a>
+          </div>
+        </div>
+        <div class="profile-frame">
+          <img src="https://via.placeholder.com/120x140" alt="Matus Stafura" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Posts Header -->
+    <div class="section-header">
+      <span class="section-title">01 / LATEST POSTS</span>
+      <a href="#" class="section-link">All posts</a>
+    </div>
+
+    <!-- Blog Posts -->
+    <article class="post-item">
+      <div class="post-date">2026-07-18</div>
+      <a href="#" class="post-title">Solving Krashen's i+1: A 0-100 Difficulty Scale for Language Reading Practice</a>
+      <p class="post-desc">Krashen's i+1 Input hypothesis is powerful but hard to apply — CEFR levels jump too much. Here's a 0-100 scale and AI prompt to find your sweet spot.</p>
+    </article>
+
+    <article class="post-item">
+      <div class="post-date">2026-07-16</div>
+      <a href="#" class="post-title">Automatically Restart MariaDB on Crash in Ubuntu with systemd</a>
+      <p class="post-desc">Learn how to auto-restart MariaDB after a crash in Ubuntu using a systemd override.</p>
+    </article>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <span>This site uses cookies for analytics. Read the <a href="#">cookie policy</a>.</span>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-reject" onclick="closeCookieBanner()">Reject</button>
+      <button class="cookie-btn cookie-accept" onclick="closeCookieBanner()">Accept</button>
+    </div>
+  </div>
 
   <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const themeText = document.getElementById('theme-text');
-
-    // Load saved theme from localStorage or default to system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      
-      if (theme === 'dark') {
-        themeIcon.textContent = '☀️';
-        themeText.textContent = 'Light Mode';
-      } else {
-        themeIcon.textContent = '🌙';
-        themeText.textContent = 'Dark Mode';
-      }
+    function closeCookieBanner() {
+      document.getElementById('cookieBanner').style.display = 'none';
     }
-
-    // Apply active theme on page load
-    applyTheme(initialTheme);
-
-    // Toggle event listener
-    toggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-    });
   </script>
 </body>
 </html>
