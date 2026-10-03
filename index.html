@@ -1,407 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matus Stafura - Portfolio</title>
-  <style>
-    /* CSS Variables for Dark Theme */
-    :root {
-      --bg-color: #0b0d10;
-      --card-bg: #12151a;
-      --border-color: #232730;
-      --text-main: #f0f2f5;
-      --text-muted: #8b949e;
-      --accent-color: #3b82f6;
-      --btn-bg: #1a1e24;
-      --btn-hover: #262c36;
-      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝚬𝖑𝛆𝛈𝛂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--font-family);
-      line-height: 1.6;
-      display: flex;
-      justify-content: center;
-      padding: 0 16px 60px;
-    }
+        body.light {
+            background-color: #f5f5f5;
+            color: #000;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 800px;
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      min-height: 100vh;
-      background-color: var(--bg-color);
-    }
+        body.dark {
+            background-color: #000;
+            color: #fff;
+        }
 
-    /* Header & Navigation */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 24px;
-      border-bottom: 1px solid var(--border-color);
-    }
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
 
-    .brand {
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+        body.light header {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
 
-    .brand-accent {
-      width: 8px;
-      height: 16px;
-      background-color: var(--accent-color);
-      display: inline-block;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.9rem;
-    }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+        .theme-toggle {
+            position: relative;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            background-color: transparent;
+        }
 
-    nav a:hover, nav a.active {
-      color: var(--text-main);
-    }
+        body.light .theme-toggle {
+            border-color: #ddd;
+        }
 
-    .nav-tools {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-left: 8px;
-    }
+        .theme-toggle:hover {
+            background-color: #1a1a1a;
+        }
 
-    .tool-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
+        body.light .theme-toggle:hover {
+            background-color: #f0f0f0;
+        }
 
-    /* Hero Section */
-    .hero {
-      padding: 40px 24px;
-      border-bottom: 1px solid var(--border-color);
-    }
+        .theme-icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+        }
 
-    .subtitle {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
+        .theme-icon svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
 
-    .hero-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: flex-start;
-    }
+        .sun-icon {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0);
+        }
 
-    .hero-text h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
+        .moon-icon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
 
-    .hero-text p {
-      color: var(--text-muted);
-      font-size: 1rem;
-      max-width: 500px;
-      margin-bottom: 24px;
-    }
+        body.light .sun-icon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
 
-    .profile-frame {
-      position: relative;
-      width: 120px;
-      height: 140px;
-      flex-shrink: 0;
-      border: 2px solid var(--accent-color);
-      padding: 4px;
-      background: var(--card-bg);
-    }
+        body.light .moon-icon {
+            opacity: 0;
+            transform: rotate(90deg) scale(0);
+        }
 
-    .profile-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .theme-menu {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            background-color: #111;
+            border-radius: 12px;
+            padding: 10px 0;
+            display: none;
+            min-width: 120px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        }
 
-    /* Buttons & Links */
-    .cta-buttons {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
+        body.light .theme-menu {
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-    .btn {
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-family: var(--font-mono);
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
+        .theme-menu.active {
+            display: block;
+        }
 
-    .btn-primary {
-      background-color: #ffffff;
-      color: #000000;
-      border: none;
-      font-weight: 600;
-    }
+        .theme-option {
+            padding: 8px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.2s;
+        }
 
-    .btn-secondary {
-      background-color: var(--btn-bg);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-    }
+        .theme-option svg {
+            width: 18px;
+            height: 18px;
+            color: #fff;
+        }
 
-    .btn-secondary:hover {
-      background-color: var(--btn-hover);
-    }
+        body.light .theme-option svg {
+            color: #000;
+        }
 
-    .social-links {
-      display: flex;
-      gap: 16px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-    }
+        .theme-option:hover {
+            background-color: #1c1c1c;
+        }
 
-    .social-links a {
-      color: var(--text-main);
-      text-decoration: underline;
-    }
+        body.light .theme-option:hover {
+            background-color: #f0f0f0;
+        }
 
-    /* Section Headers */
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px solid var(--border-color);
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-    }
+        /* Main Content */
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 50px 50px;
+            text-align: center;
+        }
 
-    .section-title {
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            margin-bottom: 30px;
+        }
 
-    .section-link {
-      color: var(--text-main);
-      text-decoration: none;
-    }
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
 
-    /* Post Lists */
-    .post-item {
-      padding: 24px;
-      border-bottom: 1px solid var(--border-color);
-    }
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #888;
+        }
 
-    .post-date {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
+        .info-item svg {
+            width: 20px;
+            height: 20px;
+            color: #3b82f6;
+        }
 
-    .post-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-main);
-      text-decoration: none;
-      display: block;
-    }
+        body.light .info-item {
+            color: #666;
+        }
 
-    .post-title:hover {
-      color: var(--accent-color);
-    }
+        .info-item span {
+            color: #fff;
+        }
 
-    .post-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
+        body.light .info-item span {
+            color: #000;
+        }
 
-    /* Cookie Banner */
-    .cookie-banner {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 600px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 12px 20px;
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
+        .description {
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.8;
+            margin: 30px 0;
+            font-size: 18px;
+            color: #aaa;
+        }
 
-    .cookie-banner a {
-      color: var(--text-main);
-      text-decoration: underline;
-    }
+        body.light .description {
+            color: #555;
+        }
 
-    .cookie-actions {
-      display: flex;
-      gap: 8px;
-    }
+        .description strong {
+            color: #fff;
+        }
 
-    .cookie-btn {
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
-    }
+        body.light .description strong {
+            color: #000;
+        }
 
-    .cookie-reject {
-      background: transparent;
-      color: var(--text-main);
-    }
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 20px;
+            }
 
-    .cookie-accept {
-      background: #ffffff;
-      color: #000000;
-      font-weight: 600;
-      border: none;
-    }
+            h1 {
+                font-size: 48px;
+            }
 
-    /* Responsive Design */
-    @media (max-width: 600px) {
-      .hero-content {
-        flex-direction: column-reverse;
-      }
-      .profile-frame {
-        width: 100px;
-        height: 120px;
-      }
-      header {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-      }
-    }
-  </style>
+            main {
+                padding: 100px 20px 50px;
+            }
+        }
+    </style>
 </head>
-<body>
-
-  <div class="container">
-    <!-- Header -->
+<body class="dark">
     <header>
-      <a href="#" class="brand">
-        Matus Stafura <span class="brand-accent"></span>
-      </a>
-      <nav>
-        <a href="#" class="active">Home</a>
-        <a href="#">Blog</a>
-        <a href="#">Portfolio</a>
-        <a href="#">About me</a>
-        <a href="#">GitHub ↗</a>
-        <div class="nav-tools">
-          <button class="tool-btn">EN ∨</button>
-          <button class="tool-btn">⚙</button>
+        <div class="logo">
+            <img src="https://XeonFileBox.onrender.com/file/70?hash=47936b" alt="Logo">
+            <span>𝚬𝖑𝛆𝛈𝛂</span>
         </div>
-      </nav>
+        <div class="theme-toggle" id="themeToggle">
+            <div class="theme-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                </svg>
+            </div>
+            <div class="theme-menu" id="themeMenu">
+                <div class="theme-option" data-theme="light">Light</div>
+                <div class="theme-option" data-theme="dark">Dark</div>
+                <div class="theme-option" data-theme="system">System</div>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="subtitle">DEVELOPER & E-COMMERCE ENTREPRENEUR . SLOVAKIA</div>
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Hi, I'm Matus.</h1>
-          <p>
-            I build e-commerce software and grow online shops. Here I write about SEO, marketing and programming, and share the tools, modules and themes I make along the way.
-          </p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary">Read the blog →</a>
-            <a href="#" class="btn btn-secondary">See my work</a>
-          </div>
-          <div class="social-links">
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">dev.to</a>
-            <a href="#">Bluesky</a>
-          </div>
+    <main>
+        <img src="https://XeonFileBox.onrender.com/file/70?hash=47936b" alt="Elena" class="profile-image">
+        
+        <h1>𝚬𝖑𝛆𝛈𝛂</h1>
+
+        <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path>
+                <path d="M22 10v6"></path>
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+            </svg>
+            Studying: <span>Engineering</span>
         </div>
-        <div class="profile-frame">
-          <img src="https://via.placeholder.com/120x140" alt="Matus Stafura" />
+        
+        <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Location: <span>Bengaluru</span>
         </div>
-      </div>
-    </section>
 
-    <!-- Latest Posts Header -->
-    <div class="section-header">
-      <span class="section-title">01 / LATEST POSTS</span>
-      <a href="#" class="section-link">All posts</a>
-    </div>
+        <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            Interests: <span>Movies & Music</span>
+        </div>
 
-    <!-- Blog Posts -->
-    <article class="post-item">
-      <div class="post-date">2026-07-18</div>
-      <a href="#" class="post-title">Solving Krashen's i+1: A 0-100 Difficulty Scale for Language Reading Practice</a>
-      <p class="post-desc">Krashen's i+1 Input hypothesis is powerful but hard to apply — CEFR levels jump too much. Here's a 0-100 scale and AI prompt to find your sweet spot.</p>
-    </article>
+        <p class="description">
+            Navigating engineering by day and unraveling the magic of <strong>movies and music</strong> by night. Based in the energetic vibe of <strong>Bengaluru</strong>, I’m a student fascinated by how stories unfold on screen and how sound shapes emotion. Always on the lookout for hidden indie tracks, legendary film scores, and cinematic masterpieces.
+        </p>
+    </main>
 
-    <article class="post-item">
-      <div class="post-date">2026-07-16</div>
-      <a href="#" class="post-title">Automatically Restart MariaDB on Crash in Ubuntu with systemd</a>
-      <p class="post-desc">Learn how to auto-restart MariaDB after a crash in Ubuntu using a systemd override.</p>
-    </article>
-  </div>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeMenu = document.getElementById('themeMenu');
+        const themeOptions = document.querySelectorAll('.theme-option');
+        const body = document.body;
 
-  <!-- Cookie Consent Banner -->
-  <div class="cookie-banner" id="cookieBanner">
-    <span>This site uses cookies for analytics. Read the <a href="#">cookie policy</a>.</span>
-    <div class="cookie-actions">
-      <button class="cookie-btn cookie-reject" onclick="closeCookieBanner()">Reject</button>
-      <button class="cookie-btn cookie-accept" onclick="closeCookieBanner()">Accept</button>
-    </div>
-  </div>
+        themeToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themeMenu.classList.toggle('active');
+        });
 
-  <script>
-    function closeCookieBanner() {
-      document.getElementById('cookieBanner').style.display = 'none';
-    }
-  </script>
+        document.addEventListener('click', () => {
+            themeMenu.classList.remove('active');
+        });
+
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.dataset.theme;
+                if (theme === 'light') {
+                    body.className = 'light';
+                } else if (theme === 'dark') {
+                    body.className = 'dark';
+                } else {
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    body.className = prefersDark ? 'dark' : 'light';
+                }
+                themeMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
